@@ -10,5 +10,8 @@ try:
         print("1. Depositar")
         print("2. Retirar")
         print("3. Consultar saldo")
+        op= int(input("Seleccione una opción: "))
+        if op ==3:
+            print("Su saldo es: ", saldo_inicial)
 except:
     print("Error: Debe ingresar un número entero para la cantidad de operaciones.")
