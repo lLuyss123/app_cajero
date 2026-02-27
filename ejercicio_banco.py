@@ -1,6 +1,8 @@
 
 saldo_inicial=1000
 canti_operaciones=0
+#Variable bool que me va a permitir verificar los datos ingresados por el usuario
+validacion=True
 
 print("CAJERO AUTOMATICO")
 canti_operaciones=input("Ingrese la cantidad de operaciones que desea realizar: ")
@@ -13,8 +15,13 @@ try:
         print("3. Consultar saldo")
         op= int(input("Seleccione una opción: "))
         if op==1:
-            cantidad_d=int(input("Ingrese la cantidad a depositar: "))
-            saldo_inicial=saldo_inicial+cantidad_d
-            print("Depósito exitoso. Saldo actual: ", saldo_inicial)
+            while validacion:
+                cantidad_d=int(input("Ingrese la cantidad a depositar: "))
+                if cantidad_d>0:
+                    saldo_inicial=saldo_inicial+cantidad_d
+                    print("Depósito exitoso. Saldo actual: ", saldo_inicial)
+                    validacion=False
+                else:
+                    print("Error: La cantidad a depositar debe ser mayor a cero. Intente nuevamente.")
 except:
     print("Error: Debe ingresar un número entero para la cantidad de operaciones.")
