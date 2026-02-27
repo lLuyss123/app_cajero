@@ -16,5 +16,12 @@ try:
             cantidad_d=int(input("Ingrese la cantidad a depositar: "))
             saldo_inicial=saldo_inicial+cantidad_d
             print("Depósito exitoso. Saldo actual: ", saldo_inicial)
+        if op==2:
+            cantidad= int(input("Ingrese la cantidad a retirar: "))
+            if cantidad>saldo_inicial:
+                print("Tu saldo es insuficiente para realizar la transacción.")
+            else:
+                saldo_inicial= saldo_inicial-cantidad
+                print("Transacción exitosa. Su nuevo saldo es: ", saldo_inicial)
 except:
     print("Error: Debe ingresar un número entero para la cantidad de operaciones.")
