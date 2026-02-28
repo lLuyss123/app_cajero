@@ -41,3 +41,5 @@ try:
             print("Digitaste una opción inválida.")
 except:
     print("Error: Debe ingresar un número entero para la cantidad de operaciones.")
+    
+print("Gracias por usar el cajero automático. ¡Hasta luego!")
