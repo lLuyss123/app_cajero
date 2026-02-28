@@ -24,16 +24,20 @@ try:
                 else:
                     print("Error: La cantidad a depositar debe ser mayor a cero. Intente nuevamente.")
         elif op==2:
-            cantidad= int(input("Ingrese la cantidad a retirar: "))
-            if cantidad>saldo_inicial:
-                print("Tu saldo es insuficiente para realizar la transacción.")
-            else:
-                saldo_inicial= saldo_inicial-cantidad
-                print("Transacción exitosa. Su nuevo saldo es: ", saldo_inicial)
+            while validacion:
+                cantidad= int(input("Ingrese la cantidad a retirar: "))
+                if cantidad>saldo_inicial:
+                    print("Tu saldo es insuficiente para realizar la transacción.")
+                    validacion=False
+                elif cantidad <0:
+                    print("No puedes retirar una cantidad negativa.")
+                else:
+                    saldo_inicial= saldo_inicial-cantidad
+                    print("Transacción exitosa. Su nuevo saldo es: ", saldo_inicial)
+                    validacion=False
         elif op ==3:
             print("Su saldo es: ", saldo_inicial)
         else:
             print("Digitaste una opción inválida.")
-            
 except:
     print("Error: Debe ingresar un número entero para la cantidad de operaciones.")
